@@ -1,7 +1,11 @@
+const questions = require("./questions");
 
-let questions = require('./questions')
-findQuestionsForQuiz = (quizId) =>
-    questions.filter(question => question.quizId === quizId)
+findAllQuestions = () => questions;
+findQuestionById = qid => questions.find(question => question._id === qid);
+findQuestionsForQuiz = qzid =>
+  questions.filter(question => question.quizId === qzid);
 module.exports = {
-    findQuestionsForQuiz
-}
+  findAllQuestions,
+  findQuestionById,
+  findQuestionsForQuiz
+};
