@@ -23,6 +23,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 require("./controllers/quiz.controller.server")(app);
 require("./controllers/question.controller.server")(app);
 require("./controllers/quiz-attempts.controller.server")(app);

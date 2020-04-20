@@ -1,9 +1,10 @@
 const quizAttemptsModel = require("../models/quiz-attempts/quiz-attempts.models.server");
 
 const scoreQuiz = (questions) => {
+  console.log("Questions", questions);
   let numberOfCorrectQuestions = 0;
   questions.forEach((question) =>
-    question.answer === question.correct
+    question.selectedAnswer.toLowerCase() === question.correct.toLowerCase()
       ? numberOfCorrectQuestions++
       : numberOfCorrectQuestions
   );
